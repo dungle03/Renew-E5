@@ -58,6 +58,10 @@ jobs:
         rm -f configkey.txt
         rm -f refreshtoken.txt
         rm -f Secret.txt
+
+    - name: Pull latest changes
+      run: git pull origin main --rebase
+      
     - name: Commit #Upload a new refresh_token to the repository
       run: |
         git config --global user.email ledinhdung2908@gmail.com
