@@ -49,7 +49,11 @@ jobs:
         sed -i '14 r refreshtoken.txt' temp.py
     - name: Test Api #ApiCall
       run: | 
-        echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.log
+        #echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.log
+        #python3 temp.py
+        
+        export TZ="Asia/Ho_Chi_Minh"
+        echo `date +'%Y-%m-%d %H:%M:%S'` begin > time.log
         python3 temp.py
     - name: Delete secrets config #Delete secret config
       run: | 
